@@ -96,12 +96,7 @@ function injectPreferences(currentEntitlements, pluginPreferences) {
   var newEntitlements = currentEntitlements;
   var content = generateAssociatedDomainsContent(pluginPreferences);
 
-  var combined = currentEntitlements[ASSOCIATED_DOMAINS] || [];
-  content.forEach(function(domain) {
-    if (combined.indexOf(domain) == -1)
-      combined.push(domain)
-  });
-  newEntitlements[ASSOCIATED_DOMAINS] = combined;
+  newEntitlements[ASSOCIATED_DOMAINS] = content;
 
   return newEntitlements;
 }
